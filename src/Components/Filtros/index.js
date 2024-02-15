@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'  
-import { Select, Separador } from './styles'
+import { Select, Separador, Option} from './styles'
 
 export const Filtros = ({ titulo, url, setVariable, variable = '' }) => {
     const [data, setData] = useState([])
@@ -22,9 +22,9 @@ export const Filtros = ({ titulo, url, setVariable, variable = '' }) => {
     return (
     <Separador>
         <Select onChange={(event) => setVariable(event.target.value)}>
-        <option value={''}>{titulo}</option>
+        <Option value={''}>{titulo}</Option>
         {
-            data.map(item => (<option value={item.id} key={item.id}>{item.nombre}</option>))
+            data.map(item => (<Option value={item.id} key={item.id}>{item.nombre}</Option>))
         }</Select>
     </Separador>
     )
